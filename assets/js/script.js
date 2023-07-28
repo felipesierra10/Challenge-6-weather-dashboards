@@ -35,9 +35,10 @@ function displayWeather(cityName) {
         .then(function (forcastData) {
             console.log(forcastData)
             var forecastArr = forcastData.list
-            for (let i = 10; i < forecastArr.length; i = i + 8) {
+            for (let i = 10,j=1; i < forecastArr.length; i = i + 8,j++) {
                 console.log(forecastArr[i])
-
+var cardTitle=document.querySelector (".card-title"+j)
+cardTitle.textContent=forecastArr[i].dt
             }
         })
 }
